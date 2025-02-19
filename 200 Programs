@@ -1,0 +1,264 @@
+1.Check whether a number is positive or negative.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    if(n>=0){
+	        System.out.println("Positive");
+	    }
+	    else{
+	        System.out.println("Negative");
+	    }
+	}
+}
+-------------------------------------------------
+2.Check whether a number is even or odd.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    if(n%2==0){
+	        System.out.println("Odd");
+	    }
+	    else{
+	        System.out.println("Even");
+	    }
+	}
+}
+---------------------------------------------------
+3.Check whether a number is divisible by 3 and 5.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    if(n%3==0 && n%5==0){
+	        System.out.println("Divisible by 3 and 5");
+	    }
+	    else{
+	        System.out.println("Not Divisible by 3 and 5");
+	    }
+	}
+}
+---------------------------------------------------
+4.Find the largest of three numbers.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
+        }
+        
+        int first = a[0], second = a[1], third = a[2];
+        if (first < second) {
+            int temp = first;
+            first = second;
+            second = temp;
+        }
+        if (first < third) {
+            int temp = first;
+            first = third;
+            third = temp;
+        }
+        if (second < third) {
+            int temp = second;
+            second = third;
+            third = temp;
+        }
+        for (int i = 3; i < n; i++) {
+            if (a[i] > first) {
+                third = second;
+                second = first;
+                first = a[i];
+            } else if (a[i] > second && a[i] != first) {
+                third = second;
+                second = a[i];
+            } else if (a[i] > third && a[i] != second && a[i] != first) {
+                third = a[i];
+            }
+        }
+        System.out.print(first);
+        System.out.print(second);
+        System.out.print(third);
+    }
+}
+------------------------------------------------
+5.Check whether a number is a prime number.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int count = 0; 
+        if (n <= 1) {
+            System.out.println("Not Prime Number");
+        } else {
+            for (int i = 2; i <= n/2; i++) {  
+                if (n % i == 0) {
+                    count++;  
+                    break;  
+                }
+            }
+            if (count == 0) {  
+                System.out.println("Prime Number");
+            } else {
+                System.out.println("Not Prime Number");
+            }
+        }
+    }
+}
+-------------------------------------------------
+6.Find the greatest of four numbers.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
+        }
+        int first = a[0], second = a[1], third = a[2], fourth = a[3];
+        if (first < second) { 
+            int temp = first; 
+            first = second; 
+            second = temp; 
+        }
+        if (first < third) { 
+            int temp = first; 
+            first = third; 
+            third = temp; 
+        }
+        if (first < fourth) { 
+            int temp = first; 
+            first = fourth; 
+            fourth = temp; 
+        }
+        if (second < third) { 
+            int temp = second; 
+            second = third; 
+            third = temp; 
+        }
+        if (second < fourth) { 
+            int temp = second; 
+            second = fourth; 
+            fourth = temp; 
+        }
+        if (third < fourth) { 
+            int temp = third; 
+            third = fourth; 
+            fourth = temp; 
+        }
+        for (int i = 4; i < n; i++) {
+            if (a[i] > first) {
+                fourth = third;
+                third = second;
+                second = first;
+                first = a[i];
+            } else if (a[i] > second) {
+                fourth = third;
+                third = second;
+                second = a[i];
+            } else if (a[i] > third) {
+                fourth = third;
+                third = a[i];
+            } else if (a[i] > fourth) {
+                fourth = a[i];
+            }
+        }
+        System.out.print(first);
+        System.out.print( second);
+        System.out.print(third);
+        System.out.print( fourth);
+    }
+}
+------------------------------------------------
+10.Find the smallest of three numbers.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
+        }
+        
+        int first = a[0], second = a[1], third = a[2];
+        if (first > second) {
+            int temp = first;
+            first = second;
+            second = temp;
+        }
+        if (first > third) {
+            int temp = first;
+            first = third;
+            third = temp;
+        }
+        if (second > third) {
+            int temp = second;
+            second = third;
+            third = temp;
+        }
+        for (int i = 3; i < n; i++) {
+            if (a[i] < first) {
+                third = second;
+                second = first;
+                first = a[i];
+            } else if (a[i] < second && a[i] != first) {
+                third = second;
+                second = a[i];
+            } else if (a[i] < third && a[i] != second && a[i] != first) {
+                third = a[i];
+            }
+        }
+        System.out.print(first);
+        System.out.print(second);
+        System.out.print(third);
+    }
+}
+-------------------------------------------------
+14.Calculate the factorial of a number using recursion.
+
+import java.util.*;
+public class Main{
+    public static int fact(int n){
+        if(n==0 ||n==1){
+         return 1;
+    }
+        return n*fact(n-1);
+    }
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            int n = in.nextInt();
+            int res=fact(n);
+            System.out.println(res);
+    }
+    }
+                  (or)
+import java.util.*;
+public class Main{
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            int n = in.nextInt();
+            int fact=1;
+            for(int i=1;i<=n;i++){
+                if(n>1){
+                    fact=fact*i;
+    }
+        }
+         System.out.println(fact);
+    }
+}
+---------------------------------------------
+
+
+
