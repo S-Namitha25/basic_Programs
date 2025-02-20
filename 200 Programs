@@ -180,6 +180,29 @@ public class Main {
         System.out.print( fourth);
     }
 }
+-----------------------------------------------
+8.Check if a number is a palindrome.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    int original=n;
+	    int r=0;
+	    while(n!=0){
+	        int digit=n%10;
+	        r=r*10+digit;
+	        n=n/10;
+	    }
+	    if(original==r){
+	        System.out.println("Palindrome");
+	    }
+	    else{
+	        System.out.println("Not Palindrome");
+	    }
+	}
+}
 ------------------------------------------------
 10.Find the smallest of three numbers.
 import java.util.*;
@@ -259,6 +282,99 @@ public class Main{
     }
 }
 ---------------------------------------------
+11.Check if a number is prime or not using a simple loop
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if(n<=1){
+            System.out.println("invalid");
+        }
+        for(int i=0;i<=Math.sqrt(n);i++){
+            if(n%2==0){
+                System.out.println("Not a prime");
+                return;
+            }
+        }
+        System.out.println("Is Prime");
+    }
+}
+----------------------------------------------------
 
+16.Find if a number is a Fibonacci number.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    int first=0,second=1;
+	    System.out.println(first);
+	    System.out.println(second);
+	    for(int i=2;i<n;i++){
+	        if(n>0){
+	            int next=first+second;
+	            System.out.println(next);
+	            first=second;
+	            second=next;
+	            
+	        }
+	    }
+	}
+}
+----------------------------------------------
+17.Determine if a number is a perfect square.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    double sqrt=Math.sqrt(n);
+	    if(sqrt==(int)sqrt){
+	        System.out.println("Perfect Square");
+	    }
+	    else{
+	        System.out.println("Not Perfect Square ");
+	    }
+	}
+}
 
-
+----------------------------------------------
+18.Count the number of digits in a number.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    int count=0;
+	    while(n!=0){
+	        if(n>=1){
+	            n=n/10;
+	            count++;
+	        }
+	    }
+	    System.out.println(count);
+	}
+}
+------------------------------------------------
+19.Check whether a string is a palindrome
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String n = in.nextLine();
+        String original="";
+        for(int i=n.length()-1;i>=0;i--){
+            original+=n.charAt(i);
+        }
+        if(n.equals(original)){
+            System.out.println("palindrome");
+        }else{
+            System.out.println("Not palindrome");
+        }
+    }
+}
+-------------------------------------------------
